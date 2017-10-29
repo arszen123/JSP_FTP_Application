@@ -1,38 +1,12 @@
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${sessionScope.connected eq true}">
+	<c:redirect url="/main" />
+</c:if>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html >
 <head>
-<style>
-#userbox{
-	position:fixed;
-    top: 50%;
-    left: 50%;
-    width:30em;
-    height:18em;
-    margin-top: -9em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em; /*set to a negative number 1/2 of your width*/
-    border: 1px solid #ccc;
-    background-color: #f3f3f3;
-}
-#submit{
-	position: absolute;
-	bottom: 2%;
-	left: 35%;
-}
-#conectTo{
-	position: absolute;
-	top: 10%;
-	left: 10%;
-}
-#userData{
-	position: absolute;
-	top: 35%;
-	left: 30%;
-}
-input{
-	margin: 5px;
-	text-align: center;
-}
-</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
 </head>
 <body>
 	<form action="login" method="POST">

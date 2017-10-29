@@ -40,6 +40,26 @@
 	  	<servlet-name>Main</servlet-name>
 	  	<url-pattern>/main</url-pattern>
 	  </servlet-mapping>
+	  
+	  <servlet>
+	  	<servlet-name>ListDirectoryFiles</servlet-name>
+	  	<servlet-class>ftpController.ListDirectoryFiles</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>ListDirectoryFiles</servlet-name>
+	  	<url-pattern>/getFiles</url-pattern>
+	  </servlet-mapping>
+	  
+	  <servlet>
+	  	<servlet-name>ListDirectoryJSON</servlet-name>
+	  	<jsp-file>/listDirectoryFilesInJSON.jsp</jsp-file>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>ListDirectoryJSON</servlet-name>
+	  	<url-pattern>/listFiles</url-pattern>
+	  </servlet-mapping>
   
   <!-- Listeners -->
 	  
