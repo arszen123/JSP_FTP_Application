@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import main.FTPClient;
+import model.CheckSession;
 import model.FTPConnection;
 
 public class Login extends HttpServlet{
@@ -24,7 +25,7 @@ public class Login extends HttpServlet{
 		HttpSession session = req.getSession();
 		Map<String, String[]> map =  req.getParameterMap();
 
-		if(!getValue((Boolean)session.getAttribute("connected"))){
+		if(!CheckSession.isConnected(session.getAttribute("connected"))){
 			
 			if(map.isEmpty()){
 				redirectTo = "login.jsp";
@@ -56,12 +57,5 @@ public class Login extends HttpServlet{
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
-	}
-	
-	private Boolean getValue(Boolean boolean1){
-		if(boolean1 == null)
-			return false;
-		return boolean1;
-		
 	}
 }
