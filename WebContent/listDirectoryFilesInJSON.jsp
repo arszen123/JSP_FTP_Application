@@ -7,6 +7,9 @@
 		<c:if test="${iEntry.getAttrs().isDir()}">
 			<c:set var="fileType" value="folder" />
 		</c:if>
+		<c:if test="${iEntry.getAttrs().isLink()}">
+			<c:set var="fileType" value="link" />
+		</c:if>
 		<c:if test="${status.count > 1}">
 			,
 		</c:if>

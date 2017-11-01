@@ -7,6 +7,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
+	<title>Connect to FTP server</title>
 </head>
 <body>
 	<form action="login" method="POST">
