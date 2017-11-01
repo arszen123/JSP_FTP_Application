@@ -16,6 +16,8 @@ import com.jcraft.jsch.SftpException;
 import main.FTPClient;
 import main.FTPClientException;
 
+import model.CheckSession;
+
 public class ListDirectoryFiles extends HttpServlet{
 
 	/**
@@ -32,12 +34,12 @@ public class ListDirectoryFiles extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		session = req.getSession();
-		connected = getBoolValue((Boolean)session.getAttribute("connected"));
+		connected = CheckSession.isConnected(session.getAttribute("connected"));
 		path = (String) req.getParameter("path");
 		requestDispatcher = req.getRequestDispatcher("listFiles");
 		
 		if(connected){
-			ftpClient = (FTPClient)session.getAttribute("FTPClient");
+			ftpClient = CheckSession.getFTPClient(session.getAttribute("FTPClient"));
 			
 			try {
 				
@@ -61,12 +63,6 @@ public class ListDirectoryFiles extends HttpServlet{
 		
 		requestDispatcher.forward(req, resp);
 		
-	}
-	
-	Boolean getBoolValue(Boolean b){
-		if(b==null)
-			return false;
-		return b;
 	}
 	
 }
