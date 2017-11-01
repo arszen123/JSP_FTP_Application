@@ -61,6 +61,26 @@
 	  	<url-pattern>/listFiles</url-pattern>
 	  </servlet-mapping>
   
+  
+	  <servlet>
+	  	<servlet-name>DownloadZip</servlet-name>
+	  	<servlet-class>ftpController.Download</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>DownloadZip</servlet-name>
+	  	<url-pattern>/download</url-pattern>
+	  </servlet-mapping>
+	  
+	  <servlet>
+	  	<servlet-name>Logout</servlet-name>
+	  	<servlet-class>session.Logout</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	  	<servlet-name>Logout</servlet-name>
+	  	<url-pattern>/logout</url-pattern>
+	  </servlet-mapping>
   <!-- Listeners -->
 	  
 	  <listener>
